@@ -3,14 +3,14 @@ import { IconButton, IconButtonProps } from '@mui/material';
 
 // Define las propiedades que el componente HoverIconButton espera recibir
 interface HoverIconButtonProps extends React.PropsWithChildren<IconButtonProps> {
-  hoverColor: string;
-  defaultColor: string;
+  hoverColor: string; // Color del ícono cuando el mouse está encima
+  defaultColor: string; // Color del ícono por defecto
 }
 
 // Componente HoverIconButton que cambia de color cuando el mouse está encima
 const HoverIconButton: React.FC<HoverIconButtonProps> = ({ hoverColor, defaultColor, children, ...props }) => {
-    // Estado para manejar si el mouse está encima del botón
-    const [hover, setHover] = useState(false);
+  // Estado para manejar si el mouse está encima del botón
+  const [hover, setHover] = useState(false);
 
   return (
     <IconButton
@@ -24,4 +24,4 @@ const HoverIconButton: React.FC<HoverIconButtonProps> = ({ hoverColor, defaultCo
   );
 };
 
-export default HoverIconButton;
+export default HoverIconButton; // Exporta el componente HoverIconButton como el valor por defecto

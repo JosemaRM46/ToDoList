@@ -1,3 +1,4 @@
+import React from 'react';
 import CheckIcon from "@mui/icons-material/Check"
 import DeleteIcon from "@mui/icons-material/Delete"
 import EditIcon from "@mui/icons-material/Edit"
@@ -14,7 +15,7 @@ interface TodoProps {
 }
 
 // Componente Todo que renderiza una tarea individual
-const Todo = ({ todos, deleteTodo, toggleComplete, startEditing } : TodoProps) => {
+const Todo: React.FC<TodoProps> = ({ todos, deleteTodo, toggleComplete, startEditing }) => {
     return (
         <li className="p-2 bg-bgBlack my-2 rounded-md shadow-sm">
             <div className="flex items-center justify-between">
