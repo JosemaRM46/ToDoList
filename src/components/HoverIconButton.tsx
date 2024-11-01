@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IconButton, IconButtonProps } from '@mui/material';
 
 // Define las propiedades que el componente HoverIconButton espera recibir
-interface HoverIconButtonProps extends IconButtonProps {
+interface HoverIconButtonProps extends React.PropsWithChildren<IconButtonProps> {
   hoverColor: string;
   defaultColor: string;
 }
@@ -19,7 +19,7 @@ const HoverIconButton: React.FC<HoverIconButtonProps> = ({ hoverColor, defaultCo
       onMouseEnter={() => setHover(true)} // Cambia el estado hover a true cuando el mouse entra
       onMouseLeave={() => setHover(false)} // Cambia el estado hover a false cuando el mouse sale
     >
-      {children}
+      {children} {/* Renderiza los hijos del componente (el ícono)*/}
     </IconButton>
   );
 };
